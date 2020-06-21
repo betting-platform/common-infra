@@ -27,6 +27,5 @@ jobs:
           PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Github username: ${GITHUB_ACTOR}"
-          echo "Github username: ${secrets.GITHUB_TOKEN}"
           ./gradlew publish
 
