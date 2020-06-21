@@ -9,6 +9,14 @@ sourceCompatibility = '11'
 
 repositories {
     jcenter()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/betting-platform/common-infra")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
