@@ -1,6 +1,6 @@
 name: Java CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -15,5 +15,14 @@ jobs:
           java-version: 11
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-      - name: Build with Gradle
-        run: ./gradlew build
+
+      - name: build
+        if: !contains(github.ref, 'master')
+        run: ./gradlew buildNeeded
+
+      - name: publish
+        contains(github.ref, 'master')
+        run: ./gradlew publish
+        env:
+          USERNAME: ${{ github.actor }}
+          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
