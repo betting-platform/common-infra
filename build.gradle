@@ -33,8 +33,8 @@ publishing {
         }
     }
     publications {
-        register("jar", MavenPublication) {
-            from(components["Java"])
+        maven(MavenPublication) {
+            from components.java
         }
     }
 }
