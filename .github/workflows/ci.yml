@@ -23,9 +23,6 @@ jobs:
       - name: publish
         if: github.ref == 'refs/heads/master'
         env:
-          USERNAME: ${{ github.actor }}
-          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Github username: ${GITHUB_ACTOR}"
-          ./gradlew publish
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew publish
 
