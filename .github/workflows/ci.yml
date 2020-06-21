@@ -17,11 +17,11 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: build
-        if: !contains(github.ref, 'master')
+        if: github.ref != 'refs/heads/master'
         run: ./gradlew buildNeeded
 
       - name: publish
-        if: contains(github.ref, 'master')
+        if: github.ref == 'refs/heads/master'
         run: ./gradlew publish
         env:
           USERNAME: ${{ github.actor }}
