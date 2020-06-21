@@ -21,7 +21,7 @@ jobs:
         run: ./gradlew buildNeeded
 
       - name: publish
-        contains(github.ref, 'master')
+        if: contains(github.ref, 'master')
         run: ./gradlew publish
         env:
           USERNAME: ${{ github.actor }}
