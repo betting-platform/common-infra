@@ -8,6 +8,6 @@ class LibraryTest {
 
     @Test
     public void should_return_false() {
-        assertThat(Library.someLibraryMethod2()).isFalse();
+        assertThat(Library.someLibraryMethod()).isFalse();
     }
 }
