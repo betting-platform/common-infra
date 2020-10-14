@@ -1,4 +1,4 @@
-name: Java CI for master
+name: master
 
 on:
   push:
