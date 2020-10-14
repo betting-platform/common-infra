@@ -1,10 +1,9 @@
-name: Java CI for non-master
+name: non_master
 
 on:
   push:
-    branches:
-    - '*'
-    - '!master'
+    branches-ignore:
+      - master
 
 jobs:
   build:
