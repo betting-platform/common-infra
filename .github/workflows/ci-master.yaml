@@ -1,8 +1,6 @@
 name: Java CI for master
 
 on:
-  push:
-    branches: 'master'
   pull_request:
     types: [merged]
     branches: 'master'
@@ -10,7 +8,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
