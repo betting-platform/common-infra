@@ -2,8 +2,9 @@ name: Java CI for master
 
 on:
   pull_request:
-    types: [merged]
-    branches: 'master'
+    types: [closed]
+    branches:
+     - 'master'
 
 jobs:
   publish:
